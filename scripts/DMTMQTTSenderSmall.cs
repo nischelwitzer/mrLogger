@@ -27,8 +27,8 @@ namespace DMT
 
             brokerPort = 1883;
             brokerAddress = "dmt.fh-joanneum.at";
-            mqttUserName = "dmt";
-            mqttPassword = "ss2021";
+            mqttUserName = "yyy";
+            mqttPassword = "xxx";
             isEncrypted = false;
             autoConnect = true;
 
