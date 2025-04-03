@@ -45,7 +45,7 @@ namespace LearnXR.Core.Utilities
         public void LogInfo(string message)
         {
             ClearLines();
-            debugAreaText.text += $"<color=\"black\">{DateTime.Now:HH:mm:ss.fff} {message}</color>\n";
+            debugAreaText.text += $"<color=\"white\">{DateTime.Now:HH:mm:ss.fff} {message}</color>\n";
         }
 
         public void LogError(string message)
@@ -57,12 +57,12 @@ namespace LearnXR.Core.Utilities
         public void LogWarning(string message)
         {
             ClearLines();
-            debugAreaText.text += $"<color=\"blue\">{DateTime.Now:HH:mm:ss.fff} {message}</color>\n";
+            debugAreaText.text += $"<color=\"orange\">{DateTime.Now:HH:mm:ss.fff} {message}</color>\n";
         }
 
         private void ClearLines()
         {
-            if (debugAreaText.text.Split('\n').Count() >= maxLines)
+            if (debugAreaText.text.Split('\n').Count() > maxLines)
             {
                 debugAreaText.text = string.Empty;
             }

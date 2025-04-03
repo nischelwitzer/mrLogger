@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Look2Camera : MonoBehaviour
+public class Rotate2Camera : MonoBehaviour
 {
     [SerializeField] private Transform referencePos;
     [SerializeField] private bool mirror;
@@ -15,9 +15,9 @@ public class Look2Camera : MonoBehaviour
 
     void Update()
     {
-        Transform transform = GetComponent<Transform>();
-        this.transform.LookAt(referencePos.position);
-        if (mirror)
-            transform.Rotate(0, 180, 0);
+        Vector3 direction = referencePos.position - this.transform.position;
+        direction.y = 0; // Y-Achse bleibt unverändert
+        this.transform.rotation = Quaternion.LookRotation(direction);
+        if (mirror) transform.Rotate(0, 180, 0);
     }
 }
